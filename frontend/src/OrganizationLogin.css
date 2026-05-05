@@ -1,0 +1,203 @@
+/* OrganizationLogin.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #1976d2;
+  --primary-dark: #1565c0;
+  --primary-light: #bbdefb;
+  --secondary: #ffffff;
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --accent: #2196f3;
+  --divider: #e0e0e0;
+  --background: #f5f7fa;
+  --card-bg: #ffffff;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --error: #f44336;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.org-login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  font-family: 'Poppins', sans-serif;
+}
+
+.org-login-card {
+  max-width: 500px;
+  width: 100%;
+  margin: 60px auto;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  flex: 1;
+}
+
+.org-login-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.org-login-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.org-login-logo .campus-icon {
+  width: 62px;
+  height: 62px;
+  fill: var(--primary);
+  margin-right: 10px;
+}
+
+.org-login-logo span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+
+.org-login-header h2 {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.org-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.form-group input {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--divider);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.login-btn {
+  padding: 0.8rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.login-btn:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.auth-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.auth-links p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.auth-links a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+
+
+.error-message {
+  background-color: rgba(244, 67, 54, 0.1);
+  border-left: 4px solid var(--error);
+  color: var(--error);
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.org-login-footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .org-login-card {
+    margin: 30px auto;
+    padding: 1.5rem;
+  }
+  
+  .org-login-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}

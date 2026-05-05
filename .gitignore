@@ -1,0 +1,39 @@
+# Frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.firebase/
+frontend/.firebaserc
+
+# Backend
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+backend/firebase_key.json
+
+# Common
+.env
+.env.*
+
+# Logs
+*.log
+
+# Database
+*.sqlite3
+
+# System
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Safety
+node_modules/
+venv/
+__pycache__/
+
+# Verification / private college data
+verification files/

@@ -1,0 +1,408 @@
+/* Terms of Service CSS with unique class names */
+/* Base styles with light/dark mode variables */
+
+:root {
+  --tos-primary-color: #3b82f6;
+  --tos-primary-hover: #2563eb;
+  --tos-bg-color: #f9fafb;
+  --tos-text-color: #1f2937;
+  --tos-header-bg: #ffffff;
+  --tos-footer-bg: #f3f4f6;
+  --tos-border-color: #e5e7eb;
+  --tos-section-bg: #ffffff;
+  --tos-btn-bg: #f3f4f6;
+  --tos-btn-hover: #e5e7eb;
+  --tos-heading-color: #111827;
+  --tos-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.tos-dark {
+  --tos-primary-color: #60a5fa;
+  --tos-primary-hover: #93c5fd;
+  --tos-bg-color: #111827;
+  --tos-text-color: #e5e7eb;
+  --tos-header-bg: #1f2937;
+  --tos-footer-bg: #1f2937;
+  --tos-border-color: #374151;
+  --tos-section-bg: #1f2937;
+  --tos-btn-bg: #374151;
+  --tos-btn-hover: #4b5563;
+  --tos-heading-color: #f9fafb;
+  --tos-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Container */
+.tos-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--tos-bg-color);
+  color: var(--tos-text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+.tos-header {
+  background-color: var(--tos-header-bg);
+  padding: 1rem 2rem;
+  box-shadow: var(--tos-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tos-header-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tos-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tos-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tos-primary-color);
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tos-logo-icon:hover {
+  transform: scale(1.05);
+  background-color: var(--tos-primary-hover);
+}
+
+.tos-logo-icon svg {
+  display: block;
+}
+
+.tos-dark .tos-logo-icon svg {
+  fill: #f9fafb;
+}
+
+.tos-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--tos-heading-color);
+  transition: color 0.3s ease;
+}
+
+.tos-title a:hover {
+  color: var(--tos-primary-color);
+}
+
+/* Dark Mode Toggle */
+.tos-mode-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tos-mode-toggle {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 28px;
+  background-color: #e5e7eb;
+  border-radius: 14px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.tos-mode-toggle.tos-dark {
+  background-color: #4b5563;
+}
+
+.tos-toggle-thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.tos-dark .tos-toggle-thumb {
+  transform: translateX(28px);
+  background-color: #111827;
+}
+
+.tos-toggle-icon-sun, .tos-toggle-icon-moon {
+  position: absolute;
+  top: 50%;
+  font-size: 14px;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease;
+}
+
+.tos-toggle-icon-sun {
+  right: 8px;
+  opacity: 1;
+}
+
+.tos-toggle-icon-moon {
+  left: 8px;
+  opacity: 0;
+}
+
+.tos-dark .tos-toggle-icon-sun {
+  opacity: 0;
+}
+
+.tos-dark .tos-toggle-icon-moon {
+  opacity: 1;
+}
+
+.tos-toggle-text {
+  font-size: 0.875rem;
+  color: var(--tos-text-color);
+  transition: color 0.3s ease;
+}
+
+/* Main Content */
+.tos-main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.tos-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--tos-section-bg);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--tos-shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tos-content-header {
+  border-bottom: 1px solid var(--tos-border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  transition: border-color 0.3s ease;
+}
+
+.tos-content-header h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--tos-heading-color);
+  font-size: 1.75rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.tos-update-date {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.tos-dark .tos-update-date {
+  color: #9ca3af;
+}
+
+/* Section Styling */
+.tos-section {
+  margin-bottom: 2rem;
+  margin-left: 20px;
+}
+
+.tos-section h3 {
+  color: var(--tos-heading-color);
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.tos-section p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.tos-list {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tos-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Navigation */
+.tos-navigation {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--tos-border-color);
+  transition: border-color 0.3s ease;
+}
+
+.tos-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background-color: var(--tos-btn-bg);
+  color: var(--tos-text-color);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.tos-nav-btn:hover {
+  background-color: var(--tos-btn-hover);
+  transform: translateY(-2px);
+}
+
+.tos-nav-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.tos-nav-btn:hover svg {
+  transform: translateX(-2px);
+}
+
+.tos-nav-btn:last-child:hover svg {
+  transform: translateX(2px);
+}
+
+/* Footer */
+.tos-footer {
+  background-color: var(--tos-footer-bg);
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.tos-footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.tos-footer-wrapper p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+.tos-dark .tos-footer-wrapper p {
+  color: #9ca3af;
+}
+
+.tos-footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tos-footer-links a {
+  color: var(--tos-text-color);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.tos-footer-links a:hover {
+  color: var(--tos-primary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .tos-header {
+    padding: 1rem;
+  }
+  
+  .tos-header-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .tos-main {
+    padding: 1rem;
+  }
+  
+  .tos-content-wrapper {
+    padding: 1.5rem;
+  }
+  
+  .tos-navigation {
+    flex-direction: column;
+  }
+  
+  .tos-nav-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tos-footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .tos-footer-wrapper {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tos-logo-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tos-mode-toggle-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tos-content-wrapper {
+    padding: 1.25rem;
+  }
+  
+  .tos-section h3 {
+    font-size: 1.125rem;
+  }
+  
+  .tos-footer-links {
+    gap: 1rem;
+  }
+}
+/* Add this to fix the p tag color issue */
+.unique-p {
+  color: var(--tos-text-color);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.tos-dark .unique-p {
+  color: var(--tos-text-color);
+}

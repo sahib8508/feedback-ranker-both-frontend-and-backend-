@@ -1,0 +1,1034 @@
+/* ReviewColleges.css */
+/* Reset and Base Styles to prevent interference */
+.app-container *,
+.app-container *::before,
+.app-container *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #e0e7ff;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --text-dark: #111827;
+  --text-medium: #4b5563;
+  --text-light: #6b7280;
+  --background-light: #ffffff;
+  --background-gray: #f9fafb;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --transition: all 0.2s ease-in-out;
+  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.5;
+  background-color: var(--background-gray);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-container.dark {
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-light: #3730a3;
+  --success-color: #059669;
+  --warning-color: #d97706;
+  --error-color: #dc2626;
+  --text-dark: #f9fafb;
+  --text-medium: #d1d5db;
+  --text-light: #9ca3af;
+  --background-light: #1f2937;
+  --background-gray: #111827;
+  --border-color: #374151;
+}
+
+/* Typography Styles */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Layout Components */
+.app-header {
+  background-color: var(--background-light);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app-header.dark {
+  background-color: var(--background-light);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+  fill: var(--primary-color);
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header-actions button, 
+.header-actions a {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.header-actions button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.header-actions button:hover {
+  background-color: var(--primary-hover);
+}
+
+.header-actions a {
+  color: var(--text-dark);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+}
+
+.header-actions a:hover {
+  background-color: var(--background-gray);
+  text-decoration: none;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 1rem;
+  background-color: var(--background-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-description {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.125rem;
+  color: var(--text-medium);
+}
+
+.value-props {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-prop {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: var(--background-gray);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.value-prop:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.value-prop svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  fill: var(--primary-color);
+}
+
+.value-prop h3 {
+  margin-bottom: 0.5rem;
+}
+
+.value-prop-text {
+  color: var(--text-medium);
+  font-size: 0.938rem;
+}
+
+/* Tips Section */
+.tips-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: var(--primary-light);
+  border-radius: var(--radius-lg);
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.tip-card {
+  padding: 1.5rem;
+  background-color: var(--background-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.tip-card h4 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.tip-text {
+  font-size: 0.938rem;
+  margin-bottom: 0;
+  color: rgb(68, 68, 68); /* Changed from white to dark text */
+}
+
+/* Colleges Section */
+.colleges-section {
+  margin-bottom: 3rem;
+}
+
+.colleges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.college-card {
+  background-color: var(--background-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.college-card.selected {
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--primary-color);
+}
+
+.college-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.college-info {
+  flex: 1;
+}
+
+.college-info h3 {
+  margin-bottom: 0.25rem;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+.location svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.25rem;
+  fill: var(--text-light);
+}
+
+.college-stats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat div {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.stat span {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.rating {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  color: white;
+}
+
+.rating.excellent {
+  background-color: var(--success-color);
+}
+
+.rating.good {
+  background-color: var(--warning-color);
+}
+
+.rating.poor {
+  background-color: var(--error-color);
+}
+
+/* College Details */
+.college-details {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .details-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-college h4,
+.feedback-section h4 {
+  margin-bottom: 1rem;
+  padding-top: 1rem; /* Added padding to create space */
+}
+
+.college-description {
+  margin-bottom: 1.5rem;
+  font-size: 0.938rem;
+  color: var(--text-medium);
+}
+
+.college-meta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.college-meta div span {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.meta-value {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.programs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.programs-list span {
+  padding: 0.25rem 0.75rem;
+  background-color: var(--primary-light);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--primary-color);
+}
+
+.ratings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ratings-grid div span {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.rating-value {
+  color: var(--warning-color);
+  font-size: 1rem;
+}
+
+.college-website {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.college-website:hover {
+  background-color: var(--primary-hover);
+  text-decoration: none;
+  color: white;
+}
+
+.college-website svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+  fill: currentColor;
+}
+
+.feedbacks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feedback-item {
+  padding: 1rem;
+  background-color: var(--background-gray);
+  border-radius: var(--radius-md);
+}
+
+.feedback-header1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  background-color: transparent; /* Remove background */
+  border: none; /* Remove border */
+  padding: 0; /* Remove padding */
+}
+.footer-link-unique {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 8px; /* optional horizontal spacing if using inline */
+}
+
+.footer-link-unique:hover {
+  color: var(--primary-hover);
+}
+
+/* NEW: Space between links */
+.footer-links-wrapper {
+  display: flex;
+  gap: 16px; /* You can adjust the spacing */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.feedback-author {
+  font-weight: 500;
+  color: rgb(68, 67, 67); /* Make text visible */
+  font-style: italic; /* Make it more professional */
+}
+
+.feedback-date {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+.feedback-text {
+  margin-bottom: 0;
+  font-size: 0.938rem;
+  color: var(--text-medium);
+}
+
+.no-feedback {
+  font-style: italic;
+  color: var(--text-light);
+}
+
+.close-details-btn {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-medium);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.close-details-btn:hover {
+  background-color: var(--background-gray);
+}
+
+/* Resources Section */
+.resources-section {
+  margin-bottom: 3rem;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.resource-card {
+  padding: 1.5rem;
+  background-color: var(--background-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.resource-card svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  fill: var(--primary-color);
+}
+
+.resource-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.resource-card p {
+  color: var(--text-medium);
+  margin-bottom: 1.5rem;
+  font-size: 0.938rem;
+}
+
+.resource-card a {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.resource-card a svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--radius-lg);
+  margin-bottom: 3rem;
+}
+
+.cta-section h2 {
+  color: white;
+}
+
+.cta-section p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: var(--primary-color);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+.cta-button svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  fill: currentColor;
+}
+
+/* Footer */
+.app-footer {
+  background-color: var(--background-light);
+  border-top: 1px solid var(--border-color);
+  padding: 3rem 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.copyright {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+
+
+
+
+/* Loading and Error States */
+.loading-screen,
+.error-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.loading-content,
+.error-content {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--background-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 400px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1rem;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  color: var(--text-medium);
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  color: var(--error-color);
+  margin-bottom: 1.5rem;
+}
+
+.error-content button {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.error-content button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Dark Mode Specific Styles */
+.app-container.dark {
+  color: var(--text-dark);
+}
+
+.dark .hero-section,
+.dark .college-card,
+.dark .resource-card,
+.dark .loading-content,
+.dark .error-content {
+  background-color: var(--background-light);
+}
+
+.dark .value-prop {
+  background-color: var(--background-gray);
+}
+
+.dark .spinner {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary-color);
+}
+
+.dark .feedback-item {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .college-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .college-stats {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .value-props {
+    gap: 1rem;
+  }
+  
+  .value-prop {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .header-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .college-meta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+ 
+}
+
+@media (max-width: 480px) {
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .college-stats {
+    gap: 0.75rem;
+  }
+  
+  .stat div {
+    font-size: 1rem;
+  }
+}
+/* Add these styles to your ReviewColleges.css file */
+
+.feedback-summary {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.dark .feedback-summary {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.feedback-summary h5 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.feedback-summary .summary-content {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.feedback-summary .ai-icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  color: #3b82f6;
+}
+
+.feedback-summary p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.feedback-summary.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 5rem;
+}
+
+.summary-loader {
+  font-size: 0.9rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+}
+
+.summary-loader:before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border: 2px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rejected-feedbacks-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #fee2e2;
+  border-radius: 8px;
+  background-color: #fef2f2;
+}
+
+.rejected-summary-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rejected-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+}
+
+.rejected-count-display {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #dc2626;
+}
+
+.rejected-label {
+  font-size: 0.875rem;
+  color: #7f1d1d;
+  margin-top: 0.25rem;
+}
+
+.rejected-note {
+  color: #991b1b;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.rejected-feedback-summary {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #fecaca;
+}
+
+.rejected-feedback-summary h5 {
+  color: #7f1d1d;
+  margin-bottom: 0.75rem;
+}
+
+/* Dark mode styles */
+.app-container.dark .rejected-feedbacks-section {
+  background-color: #1f1f1f;
+  border-color: #4a1a1a;
+}
+
+.app-container.dark .rejected-stat-item {
+  background-color: #2d1b1b;
+  border-color: #4a1a1a;
+}
+
+.app-container.dark .rejected-note {
+  color: #f87171;
+}
+
+.app-container.dark .rejected-feedback-summary h5 {
+  color: #fca5a5;
+}
+.feedback-meta {
+  margin: 8px 0 4px 0;
+}
+
+.department-tag {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.feedback-text {
+  font-size: 1rem;
+  margin: 4px 0 0 0;
+  line-height: 1.5;
+}
+
+/* Dark mode support */
+.dark .department-tag {
+  color: #999;
+}

@@ -1,0 +1,81 @@
+/* Background animation */
+@keyframes backgroundPulse {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Emoji pulse */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.under-construction-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(270deg, #35bfff, #2b66d4, #0d3d85);
+  background-size: 600% 600%;
+  animation: backgroundPulse 15s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.construction-content {
+  background: rgba(255, 0, 0, 0.712);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+}
+
+.icon-container {
+  font-size: 4rem;
+  animation: pulse 2s infinite;
+  margin-bottom: 20px;
+}
+
+.construction-content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.construction-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.home-btn {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.home-btn:hover {
+  background: #9c9c9c;
+}

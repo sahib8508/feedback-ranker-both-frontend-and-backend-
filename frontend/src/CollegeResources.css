@@ -1,0 +1,993 @@
+/* Base styles */
+.college-resources-main-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 2rem 0;
+}
+
+.college-resources-content-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header styles */
+.college-resources-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.college-resources-title-section {
+  flex: 1;
+}
+
+.college-resources-main-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.college-resources-subtitle {
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+.college-resources-upload-button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.college-resources-upload-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Loading styles */
+.college-resources-loading-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.college-resources-loading-spinner {
+  animation: spin 1s linear infinite;
+  border-radius: 9999px;
+  height: 8rem;
+  width: 8rem;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: #3b82f6 transparent transparent transparent;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error styles */
+.college-resources-error-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.college-resources-error-content {
+  text-align: center;
+}
+
+.college-resources-error-icon {
+  margin: 0 auto;
+  height: 3rem;
+  width: 3rem;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.college-resources-error-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.college-resources-error-message {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.college-resources-retry-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+}
+
+.college-resources-retry-button:hover {
+  background-color: #2563eb;
+}
+
+/* Filters section */
+.college-resources-filters-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.college-resources-filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.college-resources-filters-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.college-resources-clear-filters {
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.college-resources-clear-filters:hover {
+  color: #2563eb;
+}
+
+.college-resources-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .college-resources-filters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .college-resources-filters-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.college-resources-college-select,
+.college-resources-department-select,
+.college-resources-year-select,
+.college-resources-type-select {
+  width: 100;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: white;
+  color: #111827;
+}
+
+/* Search input */
+.college-resources-search-container {
+  position: relative;
+}
+
+.college-resources-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.college-resources-search-input {
+  width: 100%;
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: white;
+  color: #111827;
+}
+
+/* Resources grid */
+.college-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .college-resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .college-resources-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.college-resources-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.college-resources-empty-message {
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+/* Resource card */
+.college-resources-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.college-resources-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.college-resources-card-content {
+  padding: 1.5rem;
+}
+
+.college-resources-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.college-resources-type-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resource-icon-blue {
+  color: #3b82f6;
+}
+
+.resource-icon-green {
+  color: #10b981;
+}
+
+.resource-icon-purple {
+  color: #8b5cf6;
+}
+
+.resource-icon-orange {
+  color: #f97316;
+}
+
+.resource-icon-red {
+  color: #ef4444;
+}
+
+.resource-icon-gray {
+  color: #6b7280;
+}
+
+.college-resources-type-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.college-resources-year-badge {
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.college-resources-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.college-resources-card-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.college-resources-details-grid {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.college-resources-detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.college-resources-detail-label {
+  color: #6b7280;
+}
+
+.college-resources-detail-value {
+  color: #111827;
+  font-weight: 500;
+}
+
+.college-resources-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.college-resources-upload-date {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.college-resources-download-button {
+  background-color: #10b981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.college-resources-download-button:hover {
+  background-color: #059669;
+}
+
+/* Modal styles */
+.college-resources-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.college-resources-modal-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  max-width: 42rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin-top: 100px;
+  
+}
+
+.college-resources-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.college-resources-modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.college-resources-modal-close {
+  color: #6b7280;
+}
+
+.college-resources-modal-close:hover {
+  color: #4b5563;
+}
+
+.college-resources-modal-content {
+  padding: 1.5rem;
+}
+
+.college-resources-form-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .college-resources-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.college-resources-form-group {
+  margin-bottom: 1rem;
+}
+
+.college-resources-form-group-wide {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+}
+
+.college-resources-form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.college-resources-form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: white;
+  color: #111827;
+}
+
+.college-resources-form-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: white;
+  color: #111827;
+  min-height: 5rem;
+}
+
+.college-resources-file-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: white;
+  color: #111827;
+}
+
+.college-resources-file-hint {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.college-resources-modal-actions {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.college-resources-cancel-button {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  color: #374151;
+  background-color: white;
+}
+
+.college-resources-cancel-button:hover {
+  background-color: #f9fafb;
+}
+
+.college-resources-confirm-button {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  color: white;
+  background-color: #2563eb;
+}
+
+.college-resources-confirm-button:hover {
+  background-color: #1d4ed8;
+}
+
+.college-resources-confirm-button:disabled {
+  opacity: 0.5;
+}
+
+/* Debug info - remove in production */
+.college-resources-debug-info {
+  background-color: #fef3c7;
+  border-left: 4px solid #d97706;
+  color: #92400e;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.college-resources-debug-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+/* Portal Header Styles */
+.portal-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e2e8f0;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.portal-header-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.portal-header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  height: 70px;
+}
+
+/* Brand Section */
+.portal-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.portal-brand a {
+  text-decoration: none;
+}
+
+.portal-logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.portal-subtitle {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  background: #f1f5f9;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Navigation Wrapper */
+.portal-nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Desktop Navigation */
+.portal-desktop-nav {
+  display: none;
+}
+
+.portal-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portal-nav-item {
+  position: relative;
+}
+
+.portal-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  color: #475569;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.portal-nav-link:hover {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.1);
+  transform: translateY(-1px);
+}
+
+.portal-nav-link:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.portal-nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.portal-nav-text {
+  white-space: nowrap;
+}
+
+/* User Controls */
+.portal-user-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.portal-theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.portal-theme-toggle:hover {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.portal-theme-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* User Menu */
+.portal-user-menu {
+  position: relative;
+}
+
+.portal-user-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.portal-user-button:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.portal-user-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.portal-chevron {
+  width: 16px;
+  height: 16px;
+  color: #64748b;
+  transition: transform 0.2s ease;
+}
+
+.portal-user-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  overflow: hidden;
+  z-index: 50;
+  animation: dropdownSlide 0.2s ease-out;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.portal-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #374151;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.portal-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.portal-dropdown-item:hover {
+  background: #f8fafc;
+  color: #2563eb;
+}
+
+/* Mobile Menu Button */
+.portal-mobile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.portal-mobile-button:hover {
+  background: #f1f5f9;
+}
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .college-resources-content-wrapper {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .college-resources-card {
+  background-color: #2d2d2d;
+  border-color: #404040;
+}
+
+.dark-mode .college-resources-filters-container {
+  background-color: #2d2d2d;
+  border-color: #404040;
+}
+
+.dark-mode .college-resources-form-input,
+.dark-mode .college-resources-search-input {
+  background-color: #404040;
+  color: #ffffff;
+  border-color: #555;
+}
+
+.dark-mode .college-resources-modal-container {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+.dark-mode .portal-header {
+  background-color: #2d2d2d;
+  border-bottom-color: #404040;
+}
+.portal-hamburger {
+  width: 20px;
+  height: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portal-hamburger span {
+  width: 100%;
+  height: 2px;
+  background: #374151;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.portal-hamburger-open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.portal-hamburger-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.portal-hamburger-open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .portal-desktop-nav {
+    display: block;
+  }
+  
+  .portal-mobile-button {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .portal-header-content {
+    padding: 0.75rem 1rem;
+  }
+  
+  .portal-logo {
+    font-size: 1.5rem;
+  }
+  
+  .portal-subtitle {
+    display: none;
+  }
+  
+  .portal-user-controls {
+    gap: 0.5rem;
+  }
+  
+  .portal-theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .portal-user-button {
+    padding: 0.375rem 0.5rem;
+  }
+  
+  .portal-user-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Adjust main content to account for fixed header */
+.college-resources-main-container {
+  padding-top: 100px; /* Height of the header */
+}
+.dark-mode .college-resources-main-title {
+  color: #ffffff;
+}
+
+.dark-mode .college-resources-subtitle {
+  color: #d1d5db;
+}
+
+.dark-mode .college-resources-filters-title {
+  color: #ffffff;
+}
+
+.dark-mode .college-resources-card-title {
+  color: #ffffff;
+}
+
+.dark-mode .college-resources-card-description {
+  color: #d1d5db;
+}
+
+.dark-mode .college-resources-detail-label {
+  color: #9ca3af;
+}
+
+.dark-mode .college-resources-detail-value {
+  color: #ffffff;
+}
+
+.dark-mode .college-resources-form-label {
+  color: #ffffff;
+}
+
+.dark-mode .college-resources-modal-title {
+  color: #ffffff;
+}
+
+.dark-mode .college-resources-type-text {
+  color: #d1d5db;
+}
+
+.dark-mode .college-resources-empty-message {
+  color: #d1d5db;
+}
+
+.dark-mode .college-resources-form-textarea {
+  background-color: #404040;
+  color: #ffffff;
+  border-color: #555;
+}
+
+.dark-mode .college-resources-file-input {
+  background-color: #404040;
+  color: #ffffff;
+  border-color: #555;
+}
+
+.dark-mode .college-resources-file-hint {
+  color: #9ca3af;
+}
+
+.dark-mode .college-resources-card-footer {
+  border-top-color: #404040;
+}
+
+.dark-mode .college-resources-upload-date {
+  color: #9ca3af;
+}

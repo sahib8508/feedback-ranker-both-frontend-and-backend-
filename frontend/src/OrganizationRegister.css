@@ -1,0 +1,1199 @@
+/* OrganizationRegister.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.campusconnect-root {
+  --primary: #ffffff;
+  --primary-dark: #1565c0;
+  --primary-light: #bbdefb;
+  --secondary: #ffffff;
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --accent: #2196f3;
+  --divider: #e0e0e0;
+  --background: #f5f7fa;
+  --card-bg: #ffffff;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --error: #f44336;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* ====== NOTIFICATION SYSTEM ====== */
+.campusconnect-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  width: auto;
+  max-width: 600px;
+  min-width: 400px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.campusconnect-notification.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.campusconnect-notification.success {
+  background-color: #3ddd2e;
+  border-left: 5px solid #289cb1;
+}
+
+.campusconnect-notification.error {
+  background-color: #f13551;
+  border-left: 5px solid #f44336;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.notification-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.notification-content p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.success .notification-icon {
+  fill: #ffffff;
+}
+
+.error .notification-icon {
+  fill: #ffffff;
+}
+
+.notification-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.notification-close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.notification-close svg {
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
+}
+
+/* ====== PRIMARY CONTAINER STYLES ====== */
+.org-register-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  font-family: 'Poppins', sans-serif;
+}
+
+.campusconnect-card {
+  max-width: 800px;
+  width: 100%;
+  margin: 60px auto;
+  padding: 2.5rem;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  flex: 1;
+}
+
+.org-register-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.register-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.register-logo:hover {
+  transform: scale(1.05);
+}
+
+.register-logo .campus-icon {
+  width: 56px;
+  height: 56px;
+  fill: #1976d2;
+  margin-right: 12px;
+}
+
+.register-logo span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1976d2;
+}
+
+.org-register-header h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.org-register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.campusconnect-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: rgba(187, 222, 251, 0.1);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.campusconnect-form-section:hover {
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.1);
+}
+
+.campusconnect-form-section h3 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--divider);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.password-help,
+.file-help {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0.25rem 0 0 0;
+}
+
+/* File upload styling */
+.file-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.file-input-container input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1rem;
+  background-color: var(--background);
+  border: 1px dashed var(--primary);
+  border-radius: var(--border-radius);
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-label:hover {
+  background-color: rgba(25, 118, 210, 0.05);
+}
+
+.file-input-container input[type="file"]:focus + .file-label {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.campusconnect-button {
+  padding: 1rem 2.5rem;
+  background-color: #1565c0; /* slightly darker blue */
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(21, 101, 192, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.form-actions-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 0rem; /* optional spacing */
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.campusconnect-button:hover:not(:disabled) {
+  background-color: #0d47a1; /* darker on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(21, 101, 192, 0.4);
+}
+
+.campusconnect-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.3);
+}
+
+.campusconnect-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loading spinner for button */
+.button-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.auth-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.auth-links p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.auth-links a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+
+
+/* Footer */
+.org-register-footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+/* Floating label animation for inputs - optional enhancement */
+.campusconnect-form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.campusconnect-form-group input:focus + label,
+.campusconnect-form-group input:not(:placeholder-shown) + label {
+  transform: translateY(-25px) scale(0.8);
+  color: var(--primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .campusconnect-card {
+    max-width: 92%;
+    padding: 2rem;
+  }
+  
+  .campusconnect-notification {
+    width: 90%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .campusconnect-form-section {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .campusconnect-card {
+    margin: 30px auto;
+    padding: 1.5rem;
+  }
+  
+  .org-register-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .register-logo span {
+    font-size: 1.4rem;
+  }
+  
+  .campusconnect-button {
+    width: 100%;
+    padding: 0.9rem;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .campusconnect-notification {
+    padding: 12px 15px;
+    top: 10px;
+  }
+  
+  .notification-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .notification-content p {
+    font-size: 14px;
+  }
+}
+/* Enhanced Organization Register Styles */
+.enh-org-register-container {
+  min-height: 100vh;
+  background: rgb(243, 251, 255);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.enh-org-register-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+}
+
+/* Enhanced Notification System */
+.enh-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 500px;
+  width: 90%;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  opacity: 0;
+  border-left: 5px solid;
+}
+
+.enh-notification.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.enh-notification.success {
+  border-left-color: #10b981;
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+}
+
+.enh-notification.error {
+  border-left-color: #ef4444;
+  background: linear-gradient(135deg, #fef2f2 0%, #fefafd 100%);
+}
+
+.enh-notification-content {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 20px;
+  gap: 12px;
+}
+
+.enh-notification-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.enh-notification.success .enh-notification-icon {
+  fill: #10b981;
+}
+
+.enh-notification.error .enh-notification-icon {
+  fill: #ef4444;
+}
+
+.enh-notification p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #374151;
+  font-weight: 500;
+}
+
+.enh-notification-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.enh-notification-close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.enh-notification-close svg {
+  width: 16px;
+  height: 16px;
+  fill: #6b7280;
+}
+
+/* Main Card Container */
+.enh-org-register-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Header Section */
+.enh-org-register-header {
+  text-align: center;
+  padding: 40px 40px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.enh-register-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.enh-register-logo:hover {
+  transform: scale(1.02);
+}
+
+.enh-campus-icon {
+  width: 40px;
+  height: 40px;
+  fill: #1976d2;
+}
+
+.enh-register-logo span {
+  font-size: 24px; /* or any size you want */
+  font-weight: 900;
+ 
+  
+  
+
+  background: #1976d2;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.enh-org-register-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.enh-register-subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Form Styles */
+.enh-org-register-form {
+  padding: 40px;
+}
+
+.enh-form-section {
+  margin-bottom: 40px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.enh-form-section:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(103, 126, 234, 0.2);
+}
+
+.enh-form-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(103, 126, 234, 0.1);
+}
+
+.enh-section-icon {
+  width: 24px;
+  height: 24px;
+  fill: #667eea;
+}
+
+/* Form Groups */
+.enh-form-group {
+  margin-bottom: 24px;
+}
+
+.enh-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.enh-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.enh-field-info {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* Input Container */
+.enh-input-container {
+  position: relative;
+}
+
+/* Form Inputs */
+.enh-form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #1f2937;
+  background: white;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.enh-form-input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(103, 126, 234, 0.1);
+}
+
+.enh-form-input.valid {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.enh-form-input.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.enh-form-input.warning {
+  border-color: #f59e0b;
+  background-color: #fffbeb;
+}
+
+textarea.enh-form-input {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Field Error Messages */
+.enh-field-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.enh-field-error.warning {
+  color: #f59e0b;
+}
+
+.enh-field-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #10b981;
+  font-weight: 500;
+}
+
+.enh-error-icon,
+.enh-success-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Password Requirements */
+.enh-password-requirements {
+  margin-top: 12px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.enh-req {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  transition: color 0.2s;
+}
+
+.enh-req:last-child {
+  margin-bottom: 0;
+}
+
+.enh-req.met {
+  color: #10b981;
+}
+
+.enh-req svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* File Input Styles */
+.enh-file-input-container {
+  position: relative;
+}
+
+.enh-file-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.enh-file-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  background: #fafafa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 70px;
+}
+
+.enh-file-label:hover {
+  border-color: #667eea;
+  background: rgba(103, 126, 234, 0.02);
+}
+
+.enh-upload-icon {
+  width: 32px;
+  height: 32px;
+  fill: #667eea;
+  margin-right: 12px;
+}
+
+.enh-file-text {
+  flex: 1;
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.enh-file-browse {
+  background: #667eea;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.enh-file-label:hover .enh-file-browse {
+  background: #5a67d8;
+}
+
+.enh-file-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border: 1px solid #10b981;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #10b981;
+  font-weight: 500;
+}
+
+/* CSV Requirements */
+.enh-file-requirements {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.enh-file-requirements h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 12px 0;
+}
+
+.enh-csv-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.enh-csv-columns span {
+  padding: 4px 8px;
+  background: #1976d2;
+  color: white;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+/* Form Actions */
+.enh-form-actions {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.enh-form-summary {
+  margin-bottom: 32px;
+}
+
+.enh-progress-indicator {
+  text-align: center;
+}
+
+.enh-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.enh-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #4e92d1 100%);
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.enh-progress-text {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Submit Button */
+.enh-submit-btn {
+  width: 100%;
+  padding: 18px 32px;
+  background:#1976d2 ;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 60px;
+  box-shadow: 0 4px 15px rgba(103, 126, 234, 0.3);
+}
+
+.enh-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px #c7c7c7;
+}
+
+.enh-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.enh-submit-btn.invalid {
+  background: #1976d2;
+  box-shadow: none;
+}
+
+.enh-submit-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Button Spinner */
+.enh-button-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Auth Links */
+.enh-auth-links {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.enh-auth-links p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.enh-auth-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.enh-auth-link:hover {
+  color: #5a67d8;
+}
+
+/* Footer */
+.enh-org-register-footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.enh-footer-content p {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+}
+
+.enh-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.enh-footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.enh-footer-links a:hover {
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .enh-org-register-card {
+    margin: 20px;
+    border-radius: 16px;
+  }
+
+  .enh-org-register-header {
+    padding: 24px 24px 16px;
+  }
+
+  .enh-org-register-header h2 {
+    font-size: 24px;
+  }
+
+  .enh-org-register-form {
+    padding: 24px;
+  }
+
+  .enh-form-section {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .enh-form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .enh-form-section h3 {
+    font-size: 18px;
+  }
+
+  .enh-footer-links {
+    gap: 16px;
+  }
+
+  .enh-notification {
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+  }
+
+  .enh-notification.show {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .enh-org-register-card {
+    margin: 10px;
+  }
+
+  .enh-org-register-header {
+    padding: 20px 20px 12px;
+  }
+
+  .enh-org-register-form {
+    padding: 20px;
+  }
+
+  .enh-form-section {
+    padding: 16px;
+  }
+
+  .enh-csv-columns {
+    gap: 6px;
+  }
+
+  .enh-csv-columns span {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .enh-footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* Animation for form validation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.enh-form-input.error {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Focus trap for accessibility */
+.enh-form-input:focus,
+.enh-file-input:focus + .enh-file-label,
+.enh-submit-btn:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .enh-org-register-card {
+    border: 2px solid #000;
+  }
+  
+  .enh-form-input {
+    border-width: 2px;
+  }
+  
+  .enh-form-input.error {
+    border-color: #d00;
+  }
+  
+  .enh-form-input.valid {
+    border-color: #008000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
